@@ -1,0 +1,139 @@
+:root {
+    --bg-color: #1e1e2e;
+    --keypad-bg: #2d2d3b;
+    --accent-color: #ff9f43;
+    --text-white: #ffffff;
+    --text-gray: #a4a4a4;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.os-window {
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    overflow: hidden;
+    width: 800px;
+    max-width: 95%;
+}
+
+.calculator-container {
+    flex: 2;
+    padding: 20px;
+}
+
+.display-screen {
+    background-color: #151520;
+    color: var(--text-white);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 20px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.previous-operand {
+    color: var(--text-gray);
+    font-size: 1rem;
+    min-height: 1.2rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: var(--keypad-bg);
+    color: var(--text-white);
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #3d3d4f;
+}
+
+.operator-btn {
+    background-color: #4b4b5a;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.history-container {
+    flex: 1;
+    background-color: #252530;
+    border-left: 1px solid #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-container h3 {
+    color: var(--text-gray);
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+#history-list li {
+    color: var(--text-gray);
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+#history-list li span {
+    display: block;
+    color: var(--text-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#clear-history {
+    background-color: #e55039;
+    font-size: 0.9rem;
+    height: 40px;
+    margin-top: 10px;
+}
